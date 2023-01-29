@@ -1,0 +1,378 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--index: calc(1vw + 1vh);
+	--text: #e7e7e0;
+	--transition: transform .75s cubic-bezier(.075, .5, 0, 1);
+}
+@font-face {
+	font-family: raleway_f;
+	src: url(../fonts/raleway-regular.woff2);
+}
+@font-face {
+	font-family: raleway_f;
+	src: url(../fonts/raleway-black.woff2);
+	font-weight: 900;
+}
+body {
+	background-color: #010101;
+	font-family: raleway_f, sans-serif;
+	line-height: 1.55;
+}
+.main-header {
+	position: relative;
+
+}
+.main-header::after {
+	content: '';
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	height: calc(var(--index) * 10);
+	background-image: url(../img/ground.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	bottom: calc(var(--index) * -4.5);
+}
+.layers {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+}
+.layer {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background-size: cover;
+	background-position: center;
+	will-change: transform;
+	z-index: 2;
+	transition: var(--transition);
+}
+.layers__base {
+	transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+	z-index: 0;
+}
+.layers__middle {
+	transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+}
+.layers__front {
+	transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+}
+.layer__header {
+	z-index: 1;
+	transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+	transition: var(--transition);
+	will-change: transform;
+	text-transform: uppercase;
+	font-weight: 900;
+	color: var(--text);
+	text-shadow: 0 0 15px #9d822b;
+}
+.layers__title {
+	font-size: calc(var(--index) * 2.65);
+	letter-spacing: calc(var(--index) / 2.25);
+}
+.layers__caption {
+	font-size: calc(var(--index) / 1.175);
+	letter-spacing: calc(var(--index) / 3.5);
+	margin-top: calc(var(--index) * -.75);
+}
+.main-article {
+	--main-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
+	min-height: 100vh;
+	display: grid;
+    place-items: center;
+	background-size: cover;
+	background-position: center;
+	color: var(--text);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	text-align: center;
+	/* Update: */
+	top: -1px;
+	z-index: 10;
+}
+.main-article__header {
+	text-transform: uppercase;
+	font-size: calc(var(--index) * 1.8);
+	letter-spacing: calc(var(--index) / 7.5);
+	transform: var(--main-article-transform);
+	transition: var(--transition);
+	will-change: transform;
+}
+.main-article__paragraph {
+	max-width: calc(var(--index) * 30);
+	font-size: calc(var(--index) * .9);
+	margin-top: calc(var(--index) / 1.25);
+	transform: var(--main-article-transform);
+	transition: var(--transition);
+	will-change: transform;
+}
+.content {
+	will-change: transform;
+}
+.copy {
+	position: absolute;
+	bottom: calc(var(--index) * 2.5);
+	opacity: .45;
+	font-size: calc(var(--index) * .75);
+	letter-spacing: calc(var(--index) / 37.5);
+}
+.Container {
+	position: relative; /* This is important to make the text position absolute */
+  }
+  
+  .text {
+	position: absolute; /* This positions the text in front of the image */
+	top: 10px; /* These properties determine where the text will be positioned */
+	left: 10px;
+	z-index: 1; /* This is important to make sure the text is in front of the image */
+  }
+  .the-article {
+	--main-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
+	min-height: 100vh;
+	background-size: cover;
+	background-position: center;
+	color: var(--text);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	text-align: center;
+	/* Update: */
+	top: -1px;
+	z-index: 10;
+}
+.the-article__header {
+	text-transform: uppercase;
+	font-size: calc(var(--index) * 1.8);
+	letter-spacing: calc(var(--index) / 7.5);
+	transform: var(--main-article-transform);
+
+	transition: var(--transition);
+	will-change: transform;
+	
+}
+.the-article__paragraph {
+	max-width: calc(var(--index) * 30);
+	font-size: calc(var(--index) * .9);
+	margin-top: calc(var(--index) / 1.25);
+	transform: var(--main-article-transform);
+	transition: var(--transition);
+	text-align: center;
+
+	will-change: transform;
+}
+.footer {
+    background-color: black;
+    width: 100%;
+    height: 200px;
+	position: relative;
+
+}
+
+.footer p {
+    color: white;
+    text-align: center;
+    padding: 15px;
+	
+}
+#mini-image {
+    position: absolute; /* position the img */
+    top: 22px; /* position the img at the top */
+    right: 32px; /* position the img at the right */
+    width: 221px; /* set the width of the image */
+    height: 162px; /* set the height of the image */
+
+}
+#mini-image {
+    z-index: 10;
+}
+@media (max-width: 768px) {
+    /* styles for phone-sized screens */
+	#mini-image {
+		position: relative; /* adjust the position */
+		top: 20px; /* adjust the top property */
+		margin-right: 10px;
+		width: 50px;
+		height: 50px;
+	}
+	
+}
+.IMAGE{
+	width: 950px;
+	height: 400px;
+	position: relative;
+
+	border-radius: 25px 50px;
+	top: -96px;
+
+
+	
+}
+
+.second-header {
+	content: '';
+	position: absolute;
+	z-index: 100;
+	width: 4520px;
+	height: calc(var(--index) * 10);
+	background-image: url(../img/ground.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	right: 30px;
+	bottom: calc(var(--index) * -4.5);
+}
+.new-section{
+	text-align: justify;
+	width: 80%;
+
+	word-wrap: break-word;
+    transform: translate(-50%, -50%);
+}
+.center-text{
+	text-align: center;
+	max-width: calc(var(--index) * 30);
+	font-size: calc(var(--index) * .9);
+	margin: 0 auto;
+	transform: var(--main-article-transform);
+	transition: var(--transition);
+}
+@media only screen and (max-width: 768px) {
+    .center-text{
+		font-size: calc(var(--index) * .2.3);
+    }
+}
+@media only screen and (max-width: 768px) {
+    .IMAGE{
+		width: 320px;
+		transform: scale(1.5);
+
+		height: 130px;
+		position: relative;
+		border-radius: 25px 50px;
+		top: -76px;
+    }
+}
+.THE-BEE {
+	font-size: calc(var(--index) * 1.8);
+	text-transform: uppercase;
+
+	letter-spacing: calc(var(--index) / 7.5);
+	transform: var(--main-article-transform);
+	font-family: 'Fredoka One';
+	transition: var(--transition);
+	will-change: transform;
+	
+}
+.DESCRIPTION{
+	text-align: center;
+	max-width: calc(var(--index) * 30);
+	font-size: calc(var(--index) * .11);
+	margin: 0 auto;
+	transform: var(--main-article-transform);
+
+	bottom: calc(var(--index) * 50);
+	opacity: .45;
+	font-size: calc(var(--index) * .75);
+	letter-spacing: calc(var(--index) / 37.5);
+}
+.cool-button {
+	background-color:rgba(255, 252, 252, 0.842) ;
+	font-size: 30px;
+	cursor: pointer;
+	outline: none;
+	color: rgb(0, 0, 0);
+	border-radius: 50px 50px;
+	border: 2px solid #fff;
+	position: relative;
+
+	justify-content:center ;
+	padding: 10px 22px;
+	letter-spacing: calc(var(--index) / 7.5);
+	margin-bottom: 200px;
+  }
+  .cool-button:hover {
+	background-color: rgba(87, 62, 8, 0.267);
+  }
+  #parent-container {
+	display: grid;
+	text-align: center;
+	position: relative;
+	grid-template-columns: 50px 75px 100px;
+	grid-template-rows: 50px 75px 100px;
+  }
+  .logo:nth-of-type(1) {
+	position: absolute;
+	width: 180px;
+	height: 116px;
+	right: 720px;
+	top: 20px;
+  }
+  .logo:nth-of-type(2) {
+	position: absolute;
+	width: 120px;
+	height: 120px;
+	left: 350px;
+	top: 10px;
+	
+  }
+  .logo:nth-of-type(3) {
+	position: absolute;
+	width: 250px;
+	height: 255px;
+	left: 800px;
+	bottom: 45px;
+  }
+  @media (max-width: 767px) {
+	.logo:nth-of-type(1) {
+		position: absolute;
+		width: 50px;
+		height: 40px;
+		right: 170px;
+		top: 72px;
+	  }
+	  .logo:nth-of-type(2) {
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		left: 170px;
+		top: 10px;
+		
+	  }
+	  .logo:nth-of-type(3) {
+		position: absolute;
+		width: 90px;
+		height: 90px;
+		left: 150px;
+		bottom: 45px;
+	  }
+  }
+  .THE-text{
+	text-align: center;
+	max-width: calc(var(--index) * 30);
+	font-size: calc(var(--index) * .9);
+	margin: 0 auto;
+}
+  
+.THE-header {
+	text-transform: uppercase;
+	font-size: calc(var(--index) * 1.8);
+	letter-spacing: calc(var(--index) / 7.5);
+
+	will-change: transform;}
+  
+  
+  
