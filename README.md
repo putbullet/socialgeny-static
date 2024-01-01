@@ -14,10 +14,11 @@ SOCIAL GENY is a social media management agency dedicated to helping businesses 
 
 ## Screenshots
 
-![SOCIAL GENY Website](screenshots/social_geny_screenshot.png)
-![SOCIAL GENY Website](screenshots/social_geny_screenshot.png)
-![SOCIAL GENY Website](screenshots/social_geny_screenshot.png)
-![SOCIAL GENY Website](screenshots/social_geny_screenshot.png)
+![SOCIAL GENY Website](screenshot1.png)
+![SOCIAL GENY Website](screenshot2.png)
+![SOCIAL GENY Website](screenshot3.png)
+![SOCIAL GENY Website](screenshot4.png)
+
 
 
 ## Getting Started
